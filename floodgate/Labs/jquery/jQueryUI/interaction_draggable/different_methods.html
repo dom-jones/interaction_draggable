@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title> Interaction: Draggable-Different Methods </title>
+        <style>
+
+           .sub
+           {
+               width: 100px;
+               height: 100px;
+               border: 1px solid snow;
+               margin: 5px;
+               padding: 5px;
+           };
+         </style>
+
+       <!-- <link rel="stylesheet" href="jquery-ui.css">
+         <script src="jquery.js"></script>
+         <script src="jquery-ui.js"></script> -->
+         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> 
+         <script>
+             $(document).ready(function(){
+                $("#sub1, #sub2").draggable();
+                $("#sub3").draggable({revert: true, revertDuration: 1000});
+                $("#btnDisable").click(function(){
+                    $("#sub1").draggable("disable");
+                });
+                $("#btnEnable").click(function(){
+                    $("#sub1").draggable("enable");
+                });
+                $("#btnDestroy").click(function(){
+                    $("#sub2").draggable("destroy");
+                });
+                $("#btnGet").click(function(){
+                  alert ($("#sub3").draggable("option", "revertDuration"));
+                });
+                $("#btnSet").click(function(){
+                  $("#sub1").draggable("option", {"cursor":"pointer", "revert":true}); //need to set three parameters when setting an option
+                });
+                $("#btnOptions").click(function(){
+                  var obj = $("#sub1").draggable("option");
+                  alert(obj.revert);
+                  alert(obj.revertDuration);
+                  /*$.each(obj, function(key, value){
+                      alert(key + " = " + value);
+                  });*/
+                });
+             });
+        </script>
+</head>
+
+
+<body>
+    <div id="main">
+        <div class="sub" id="sub1" style="background: red";></div>
+        <div class="sub" id="sub2" style="background: green";></div>
+        <div class="sub" id="sub3" style="background: black";></div>
+     </div><br />
+        <button id="btnDisable">Disable</button>
+        <button id="btnEnable">Enable</button>
+        <button id="btnDestroy">Destroy</button>
+        <button id="btnGet">Get Option</button>
+        <button id="btnSet">Set Option</button>
+        <button id="btnOptions">Get All Options</button>
+</body>
+</html>

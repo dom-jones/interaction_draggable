@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title> Interaction: Draggable-Restrict </title>
+        <style>
+           #main
+           {
+               width: 500px;
+               height: 500px;
+               margin: 0px auto;
+               border: 2px solid black;
+           }
+           .sub
+           {
+               width: 100px;
+               height: 100px;
+               border: 1px solid snow;
+               margin: 5px;
+               padding: 5px;
+               float: left;
+           }
+         </style>
+       <!-- <link rel="stylesheet" href="jquery-ui.css">
+         <script src="jquery.js"></script>
+         <script src="jquery-ui.js"></script> -->
+         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> 
+         <script>
+             $(document).ready(function(){
+                // $("p:first, #box").draggable()
+               // $("#main").draggable();
+              //$(".sub").draggable();
+              $("#sub2").draggable({axis: "y", containment: "#main"});
+              $("#sub1").draggable({axis: "x"});
+              $("#sub3").draggable({containment: "#main"});
+             });
+        </script>
+</head>
+
+
+<body>
+    <div id="main"</div>
+        <div class="sub" id="sub1" style="background: red";></div>
+        <div class="sub" id="sub2" style="background: green";></div>
+        <div class="sub" id="sub3" style="background: black";></div>
+        <p> Floodgate Academy </p>
+        <p> #weareFGA #cultureMisFits </P>
+    </div>
+
+
+
+
+
+</body>
+</html>
